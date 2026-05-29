@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estimasi Konsumsi</title>
+</head>
+<body>
+  <h1>Estimasi Biaya Konsumsi</h1>
+
+  <p>Nama: Andien</p>
+  <p>Praktikum Azure Serverless</p>
+
+  <h3>Layanan Azure</h3>
+  <ul>
+    <li>Azure Static Web Apps</li>
+    <li>Azure Functions</li>
+    <li>GitHub Actions</li>
+  </ul>
+
+  <input type="number" id="jumlah" placeholder="Jumlah peserta">
+
+  <select id="jenis">
+    <option value="snack">Snack</option>
+    <option value="makan">Makan</option>
+    <option value="lengkap">Lengkap</option>
+  </select>
+
+  <button onclick="hitung()">Hitung</button>
+
+  <pre id="hasil"></pre>
+
+  <script>
+    async function hitung() {
+      const jumlah = document.getElementById("jumlah").value;
+      const jenis = document.getElementById("jenis").value;
+
+      const url =
+      "URL_FUNCTION_KAMU?jumlah=" + jumlah + "&jenis=" + jenis;
+
+      const response = await fetch(url);
+      const data = await response.json();
+
+      document.getElementById("hasil").innerText =
+      JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
