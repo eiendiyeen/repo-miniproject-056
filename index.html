@@ -6,7 +6,7 @@
 <body>
   <h1>Estimasi Biaya Konsumsi</h1>
 
-  <p>Nama: Andien</p>
+  <p>Nama: Kesya</p>
   <p>Praktikum Azure Serverless</p>
 
   <h3>Layanan Azure</h3>
@@ -34,7 +34,7 @@
       const jenis = document.getElementById("jenis").value;
 
       const url =
-      "URL_FUNCTION_KAMU?jumlah=" + jumlah + "&jenis=" + jenis;
+      "https://func-serverless-056-e8ebb0hvdzfzdddp.southeastasia-01.azurewebsites.net/api/MiniProject?jumlah=40&jenis=snack" + jumlah + "&jenis=" + jenis;
 
       const response = await fetch(url);
       const data = await response.json();
